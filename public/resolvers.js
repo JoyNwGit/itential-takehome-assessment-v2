@@ -1,9 +1,9 @@
-const db = require('./db');
- 
+import db from './db';
+
 const Query = {
   getMachineQuantities: (_) => {
     const sodas = db.sodas.list();
-    let status = null;
+    let statuses = null;
     if (Array.isArray(sodas))
     {
       // from the returned sodas get the soda property

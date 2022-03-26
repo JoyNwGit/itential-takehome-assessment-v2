@@ -1,5 +1,6 @@
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient, { gql } from "apollo-boost";
+import SodaCard from "../components/VendingMachine/SodaCard";
 
 
 const Home = ({ data }) => {
@@ -11,6 +12,7 @@ const Home = ({ data }) => {
     <ApolloProvider client={client}>
       <div>
         <h1>NextJS GraphQL Apollo App</h1>
+        <SodaCard />
       </div>
     </ApolloProvider>
   );
