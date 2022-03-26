@@ -1,0 +1,29 @@
+[
+  {
+    "id": "404",
+    "soda": {
+      "productName": "Test",
+      "description": "Exists",
+      "cost": 50.45,
+      "maximumQuantityToVend": 50
+    }
+  },
+  {
+    "id": "404-2",
+    "soda": {
+      "productName": "Test-2",
+      "description": "Exists-2",
+      "cost": 50.45,
+      "maximumQuantityToVend": 50
+    }
+  },
+  {
+    "id": "ByG2Da9M5",
+    "soda": {
+      "productName": "FizzyFola",
+      "description": "Furry Soda makes you question life",
+      "cost": 3,
+      "maximumQuantityToVend": 2
+    }
+  }
+]
