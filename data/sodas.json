@@ -2,28 +2,37 @@
   {
     "id": "404",
     "soda": {
-      "productName": "Test",
-      "description": "Exists",
-      "cost": 50.45,
-      "maximumQuantityToVend": 50
+      "productName": "Fizz",
+      "description": "An effervescent fruity experience with hints of grape and coriander.",
+      "cost": 1.00,
+      "maximumQuantityToVend": 100
     }
   },
   {
     "id": "404-2",
     "soda": {
-      "productName": "Test-2",
-      "description": "Exists-2",
-      "cost": 50.45,
-      "maximumQuantityToVend": 50
+      "productName": "Pop",
+      "description": "An explosion of flavor that will knock your socks off!",
+      "cost": 1.00,
+      "maximumQuantityToVend": 100
     }
   },
   {
     "id": "ByG2Da9M5",
     "soda": {
-      "productName": "FizzyFola",
-      "description": "Furry Soda makes you question life",
-      "cost": 3,
-      "maximumQuantityToVend": 2
+      "productName": "Cola",
+      "description": "A basic no nonsense cola that is the perfect pick me up for any occasion.",
+      "cost": 1.00,
+      "maximumQuantityToVend": 200
     }
-  }
+  },
+    {
+      "id": "ByG2Da9M5b",
+      "soda": {
+        "productName": "Mega Pop",
+        "description": "Not for the faint of heart.  So flavorful and so invigorating, it should probably be illegal.",
+        "cost": 1.00,
+        "maximumQuantityToVend": 50
+      }
+    }
 ]

@@ -1,0 +1,101 @@
+Backend is where I'm stronger so that'll be my focus first.
+  - likely going to use graphql so i don't have to think about endpoint management
+Frontend (if I get to it) will likely be text until i can turn them into buttons
+
+
+MVP: Create a vending machine of virtual sodas
+- 4 flavors now, more in the future (make adding new entries easy)
+  - unique cost and quantity
+    - price needs to be adjustable for sales team (sub task 1)
+      - easy to adjust prices (sub task 1.25)
+    - Time based price adjustments for marketing team? (sub task 1.5 / stretch)
+    (maybe is on sale until <DATE> - state management maybe?)
+- Buy soda = download JSON file for soda (sub task 2)
+- Teach vending machine what money is (Machine learning? Hmm)
+- Check Status of vending machine (sub task 3)
+  - partial to full restocks (sub task 4)
+
+
+  Reqs:
+  - backend = Nodejs for me
+  - frontend = React + bulma probably
+    - More flavors = more react components
+
+Put the provided into notarealdb
+Put onto github private repo with password maybe?
+
+
+Architecture Workflow:
+Part 1 Domain to Design Model
+- Who is going to use it?
+  - sales and marketing changing prices.
+  - eventually customers buying
+  - maintenance for restocks (different user permissions?)
+- How are they going to use it?
+  - Changing prices
+  - Checking status for Restocking (maintenance)
+- How many users are there?
+  - Potentially 4 groups but majority would be customers
+    - maintenance, sales, marketing, customers
+    - not all customers may buy and just browse first
+      - (reads (browse) more than writes (buys))
+- What does the system do?
+  - adjust amount of sodas
+  - adjust prices of sodas
+  - give json download of soda upon purchase (receipt of purchase - use cvs for reference)
+- What are the inputs and outputs of the system?
+  - input money - start with no refunds, work backwards to returning money
+  - outputs - json file of purchased soda
+- How much data do we expect to handle?
+  - currently not much just low queries for sodas and writes when a soda is bought,
+   restocked, or has a price change
+- How many requests per second do we expect?
+  - n/a here
+- What is the expected read to write ratio?
+  - more reads than writes
+
+High Level Design
+Sketch the design (Pseudocode and justification)
+- Purchase or Admin
+- if Admin
+  - if checking / adjusting prices - query / mutation
+  - if checking status of machine - query
+      - if restocking - mutation
+- if Purchase
+  - insert money (need to track how much money is in the machine)
+    - select soda
+      - check if money inserted is enough
+        - if not enough, message not enough
+        - if yes, soda is downloaded (refunds cost extra)
+
+
+Design Core Components
+ - Database
+  - need simple starter database for my needs right now - notarealdb
+  - the schema is pre-defined: a real sql database should suffice
+    - if schema is adjustable, consider a document store like mongodb
+      - keyvalue store would change entire value on update (unnecessary)
+      - graph store - overcomplicated for current needs
+      - column store - not aggregating data
+      - document - versatile and can be useful for simpler queries
+
+ - API and object oriented Design
+  - Graphql schema
+    - Main types:
+      - soda
+      - query
+        - status of Machine
+        - sodas list
+        - single soda
+      - mutation
+        - prices of soda
+        - amount of soda
+      - input SodaInput (for new sodas)
+
+
+ Scale the design
+  - R/W scaling - read scaling would occur before write scaling ( i think )
+    - currently don't have an opinion on which sql db would be best for
+    horizontal scaling just need to avoid single points of failure
+      - master write db with read replicas + load balancers
+        - dual master or promotion system among the read replicas (complex)

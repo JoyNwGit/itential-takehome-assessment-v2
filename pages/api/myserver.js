@@ -1,7 +1,5 @@
 import {typeDef as SodaDef} from '../../public/schemas/SodaSchemas';
-
 // get all the types your queries will use
-// const typeDefs = fs.readFileSync('../../public/schemas/schema.graphql', {encoding: 'utf-8'});
 
 // get all the functions that will handle query resolving
 const resolvers = require('../../public/resolvers');
@@ -22,6 +20,7 @@ export const config = {
   },
 };
 
+// i have no idea what this is meant to do, i think it's a NextJS thing
 export default async function handler(req, res) {
   await startServer;
   await server.createHandler({

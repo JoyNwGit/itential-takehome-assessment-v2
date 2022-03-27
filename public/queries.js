@@ -5,7 +5,10 @@ query testGettingSodas {
   getAllSodas {
     id
     soda {
+      productName
       description
+      cost
+      maximumQuantityToVend
     }
   }
 }`
