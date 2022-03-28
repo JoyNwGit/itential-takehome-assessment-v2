@@ -7,7 +7,7 @@ const resolvers = require('../../public/resolvers');
 const {makeExecutableSchema} = require('@graphql-tools/schema');
 const schema = makeExecutableSchema( {typeDefs: [SodaDef], resolvers} );
 
-
+// Create the server
 const  {ApolloServer} = require('apollo-server-micro');
 const server = new ApolloServer({schema});
 
@@ -21,6 +21,7 @@ export const config = {
 };
 
 // i have no idea what this is meant to do, i think it's a NextJS thing
+// i'll look into it later
 export default async function handler(req, res) {
   await startServer;
   await server.createHandler({

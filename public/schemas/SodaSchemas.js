@@ -1,3 +1,4 @@
+// the typdef version of schema.graphql
 export const typeDef = `
 type Soda {
   id: String!

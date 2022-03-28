@@ -1,5 +1,7 @@
 const db = require('../db');
-
+// All the resolvers to handle all my queries
+// potential improvement - if the vending machine gave out other foodstuffs than
+// sodas, modularize the resolvers and queries to relevant food files.
 const Query = {
   getMachineQuantities: (_) => {
     const sodas = db.sodas.list();

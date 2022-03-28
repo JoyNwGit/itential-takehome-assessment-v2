@@ -1,4 +1,5 @@
 import { gql } from "apollo-boost";
+// File of all the queries i intend to use and the values I want to recieve
 
 const GET_ALL_SODAS = gql`
 query testGettingSodas {

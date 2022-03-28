@@ -2,7 +2,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient, { InMemoryCache } from "apollo-boost";
 import DisplayContainer from "../components/VendingMachine/DisplayContainer";
 
-
+// Top level Component to all the onscreen elements
 const VendingMachine = () => {
   const client = new ApolloClient({
     uri: "http://localhost:3000/api/myserver",
